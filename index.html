@@ -1,18 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>n i k k</title>
-   <button id="toggle-theme">🌙 Dark Mode</button>
+    <title>n i k k · AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
+    <!-- Animated Background -->
+    <div class="bg-orbs">
+        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+        <div class="orb orb3"></div>
+    </div>
+
+    <!-- Status + Theme -->
+    <div class="topbar">
+        <p id="status">● Ready</p>
+        <button id="toggle-theme">🌙</button>
+    </div>
+
+    <!-- Listening dot -->
+    <div id="visual-feedback"></div>
+
     <div class="container">
-        <h1>n i k k</h1>
-        <div class="machine">
+
+        <!-- Header -->
+        <header class="hero">
+            <h1>n i k k</h1>
+            <p class="tagline">Your personal AI assistant</p>
+        </header>
+
+        <!-- Avatar -->
+        <div class="avatar-wrap">
+            <div class="avatar" id="avatar">
+                <div class="avatar-ring ring1"></div>
+                <div class="avatar-ring ring2"></div>
+                <div class="avatar-core">
+                    <div class="avatar-face">
+                        <div class="eyes">
+                            <span class="eye" id="eye-left"></span>
+                            <span class="eye" id="eye-right"></span>
+                        </div>
+                        <div class="mouth" id="mouth"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Voice Controls -->
+        <div class="glass-card controls-card">
+            <div class="in_middlle">
+                <button id="start" class="btn-voice btn-start">
+                    <span class="btn-icon">🎤</span>
+                    <span>Start</span>
+                </button>
+                <button id="stop" class="btn-voice btn-stop">
+                    <span class="btn-icon">⏹</span>
+                    <span>Stop</span>
+                </button>
+                <button id="speak" class="btn-voice btn-speak">
+                    <span class="btn-icon">💬</span>
+                    <span>Speak</span>
+                </button>
+            </div>
+            <div class="voice-bar-wrap">
+                <div class="voice-bar" id="voice-bar"></div>
+            </div>
+        </div>
+
+        <!-- Weather Card -->
+        <div class="glass-card machine">
+            <div class="card-label">🌤 Weather</div>
             <div class="temp">
                 <p>Location : --</p>
                 <p>Country : --</p>
@@ -26,30 +87,25 @@
             </div>
         </div>
 
-        <div class="nikk_setup">
-            <input type="text" placeholder="Enter your name">
-            <input type="text" placeholder="Enter your bio">
-            <input type="text" placeholder="Enter your location">
-            <input type="text" placeholder="Enter your instagram">
-            <input type="text" placeholder="Enter your Github">
-            <button>Submit</button>
+        <!-- Setup Card -->
+        <div class="glass-card nikk_setup">
+            <div class="card-label">⚙️ Setup your profile</div>
+            <input type="text" placeholder="Your name">
+            <input type="text" placeholder="Your bio">
+            <input type="text" placeholder="Your location">
+            <input type="text" placeholder="Instagram username">
+            <input type="text" placeholder="GitHub username">
+            <button class="btn-submit">Save Profile</button>
         </div>
 
-        <div class="in_middlle">
-            <button id="start">Start Voice</button>
-            <button id="stop">Stop Voice</button>
-            <button id="speak">Speak</button>
+        <!-- Chat History -->
+        <div class="glass-card chat-wrap">
+            <div class="card-label">💬 Chat</div>
+            <div class="chat-history" id="chat-history"></div>
         </div>
+
     </div>
 
-    <p id="status">Ready</p>
-    
-    <div id="visual-feedback"></div>
-    
     <script src="app.js"></script>
-    
-    <div class="chat-history" id="chat-history"></div>
-
 </body>
-
 </html>
